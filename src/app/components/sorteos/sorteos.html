@@ -1,0 +1,141 @@
+<div class="body">
+	<div class="page-title-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 page-title wow fadeIn">
+					<span aria-hidden="true" class="glyphicon glyphicon-random"></span>
+					<h1>Sorteos</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="table-responsive" style="padding-top: 10px; max-height: 1000px">
+				<div class="col-md-2 col-md-offset-10" style="padding-bottom: 10px">
+					<button class="btn btn-success" data-toggle="modal" (click)="getDate()" data-target="#addSorteo">Nuevo Sorteo</button>
+				</div>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Fecha</th>
+							<th>Sorteo</th>
+							<th>Num. Ganador</th>
+							<th>Opciones</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Fecha</th>
+							<th>Sorteo</th>
+							<th>Num. Ganador</th>
+							<th>Opciones</th>
+						</tr>
+					</tfoot>
+					<tbody>
+
+						<tr *ngFor="let sorteo of sorteos">
+							<td>
+								{{sorteo.fecha | date:"dd/MM/yyyy hh:mm:ss a"}}
+							</td>
+							<td>
+								{{sorteo.sorteo}}
+							</td>
+							<td>
+								{{sorteo.nganador}}
+							</td>
+							<td>
+								<input type="submit" class="btn btn-success" *ngIf="sorteo.nganador == ''" (click)="setGanadorShow(sorteo)"  style="float: left; margin-right: 5px" value="Ganador">
+                    			<input type="submit" class="btn btn-danger" (click)="delete(sorteo)" style="float: left" value="Eliminar">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button id="addSorteoBtn" [hidden]="true" data-toggle="modal" data-target="#addSorteo">Open Modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="addSorteo">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" id="closeSorteoModal" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title text-center">{{action}} Sorteo</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" style="margin-top: 15px" (ngSubmit)="createOrUpdate()" name="ContactForm" role="form">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Fecha: </label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" placeholder="Fecha" [(ngModel)]="fecha" [ngModelOptions]="{standalone: true}" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Sorteo: </label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" placeholder="Numero de sorteo" [(ngModel)]="model.sorteo" [ngModelOptions]="{standalone: true}" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Numero ganador: </label>
+						<div class="col-sm-9">
+							<input type="text" minlength="2" maxlength="2" class="form-control" placeholder="Numero ganador" [(ngModel)]="model.nganador" [ngModelOptions]="{standalone: true}" disabled>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+						<input type="submit" class="btn btn-primary" value="Enviar">
+					</div>
+
+				</form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<button id="setGanador" [hidden]="true" data-toggle="modal" data-target="#ganador">Open Modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="ganador">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" id="closeSorteoModal" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title text-center">Numero Ganador</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" style="margin-top: 15px" (ngSubmit)="createOrUpdate()" name="ContactForm" role="form">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Fecha: </label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" placeholder="Fecha" [(ngModel)]="fecha" [ngModelOptions]="{standalone: true}" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Sorteo: </label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" placeholder="Numero de sorteo" [(ngModel)]="model.sorteo" [ngModelOptions]="{standalone: true}" disabled>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Numero ganador: </label>
+						<div class="col-sm-9">
+							<input type="text" minlength="2" maxlength="2" class="form-control" placeholder="Numero ganador" [(ngModel)]="model.nganador" [ngModelOptions]="{standalone: true}">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<a class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+						<input type="submit" class="btn btn-primary" value="Enviar">
+					</div>
+
+				</form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<toaster-container></toaster-container>

@@ -1,0 +1,53 @@
+<div class="body">
+	<div class="page-title-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 page-title wow fadeIn">
+					<span aria-hidden="true" class="glyphicon glyphicon-equalizer"></span>
+					<h1>Reporte</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" style="width: 100%">
+		<div class="row">
+			<div class="table-responsive" style="padding-top: 10px; max-height: 1000px">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Sorteo</th>
+							<th>Fecha</th>
+							<th>Agente</th>
+							<th>Supervisor</th>
+							<th>Num. Ganador</th>
+							<th>Total Venta</th>
+							<th>Total Gane</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Sorteo</th>
+							<th>Fecha</th>
+							<th>Agente</th>
+							<th>Supervisor</th>
+							<th>Num. Ganador</th>
+							<th>Total Venta</th>
+							<th>Total Gane</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr *ngFor="let fila of reporte">
+							<td>{{fila.sorteo}}</td>
+							<td>{{fila.fecha | date:"dd/MM/yyyy hh:mm:ss a"}}</td>
+							<td>{{fila.agente}}</td>
+							<td>{{fila.supervisor}}</td>
+							<td>{{fila.nganador}}</td>
+							<td>{{fila.totalVenta}}</td>
+							<td>{{fila.totalGane}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<div class="body">
+	<div class="container">
+		<div class="row" *ngIf="isAdmin">
+			<h1 class="text-left" style="color: gray">Bienvenido {{user.username}}</h1>
+			<hr>
+			<a [routerLink]="['/sorteos']" class="col-md-3 col-xs-12">
+				<div class="entry">
+					<h1>Ingresar Sorteo</h1>
+				</div>
+			</a>
+			<a [routerLink]="['/usuarios']" class="col-md-3 col-xs-12">
+				<div class="entry">
+					<h1>Ingresar Usuario</h1>
+				</div>
+			</a>
+			<a [routerLink]="['/reporte']" class="col-md-3 col-xs-12">
+				<div class="entry">
+					<h1>Generar Reporte</h1>
+				</div>
+			</a>
+		</div>
+		<div class="row" *ngIf="isSupervisor">
+			<h1 class="text-left" style="color: gray">Bienvenido {{user.username}}</h1>
+			<hr>
+			<a [routerLink]="['/ventas']" class="col-md-3 col-xs-12">
+				<div class="entry">
+					<h1>Venta por Agente</h1>
+				</div>
+			</a>
+			<a [routerLink]="['/reporte']" class="col-md-3 col-xs-12">
+				<div class="entry">
+					<h1>Generar Reporte</h1>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
