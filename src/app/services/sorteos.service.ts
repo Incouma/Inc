@@ -17,6 +17,7 @@ export class SorteosService{
 			//this.port = 8021;
 			this.url = "https://e3471de6.ngrok.io";
 		}
+		
 		this.url = this.url + ":"+this.port+"/api"+"/sorteos";
 		this.token = "";
 	}
