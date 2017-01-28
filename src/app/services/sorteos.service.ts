@@ -15,7 +15,7 @@ export class SorteosService{
 	constructor (private _http: Http, private session: SessionService){
 		if ('production' === ENV) {
 			//this.port = 8021;
-			//this.url = "http://fiasps.unitec.edu";
+			this.url = "https://e3471de6.ngrok.io";
 		}
 		this.url = this.url + ":"+this.port+"/api"+"/sorteos";
 		this.token = "";

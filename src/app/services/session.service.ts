@@ -58,7 +58,7 @@ export class SessionService{
 
 	getUser(id: string){
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://localhost:8000/api/users/' + id, false);  // `false` makes the request synchronous
+		request.open('GET', 'https://e3471de6.ngrok.io:8000/api/users/' + id, false);  // `false` makes the request synchronous
 		request.setRequestHeader("Authorization", this.session.id);
 		request.send(null);
 
