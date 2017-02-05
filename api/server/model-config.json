@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "ACL": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Users": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "RoleMapping": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Role": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Agentes": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Sorteos": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Vdiaria": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}
