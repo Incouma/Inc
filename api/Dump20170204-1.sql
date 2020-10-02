@@ -156,7 +156,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (9,'Administrador',NULL,'Higari','$2a$10$P9KwNxPfxo1bGfZcdCCMmuxvKvmVgmHhN1b2VsrLIyGHRZq0uf.He',NULL,NULL,'higari@gmail.com',0,NULL,NULL,NULL,NULL),(10,'Supervisor',NULL,'Cubano','$2a$10$Uil.ojKM/9/S4Ahp2g24JeoMBMM35EaE7A6CHZFHeqz2NCflO5VKi',NULL,NULL,'cubano@gmail.com',0,NULL,NULL,NULL,NULL);
+INSERT INTO `Users` VALUES (9,'Administrador',NULL,'Higari','12241200',NULL,NULL,'higari@gmail.com',0,NULL,NULL,NULL,NULL),(10,'Supervisor',NULL,'Cubano','$2a$10$Uil.ojKM/9/S4Ahp2g24JeoMBMM35EaE7A6CHZFHeqz2NCflO5VKi',NULL,NULL,'cubano@gmail.com',0,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 
